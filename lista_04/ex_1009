@@ -1,0 +1,13 @@
+s = input()
+while s != "*":
+    s = s.upper() # passa a string para maiúsculo
+    palavras = s.split() # divide a string em uma lista
+    letra = palavras[0][0]
+    iguais = True # supõe que as iniciais são iguais
+    for palavra in palavras: #recupera cada palavra da lista
+        inicial = palavra[0]
+        if inicial != letra: iguais = False #testa a inicial
+        if not iguais:  break
+    
+    print("Y" if iguais else "N")
+    s = input()

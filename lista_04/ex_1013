@@ -1,0 +1,10 @@
+a, b, c = map(int, input().split())
+
+maior = a 
+
+if b > maior: 
+    maior = b
+if c > maior:
+    maior = c 
+    
+print(maior, "eh o maior")
