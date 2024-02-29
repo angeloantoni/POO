@@ -1,0 +1,32 @@
+
+
+def iniciais(nome):
+    palavras = nome.split()
+    r = []
+
+    for palavra in palavras:
+        if not palavra == palavra.lower():     
+            r += palavra[0]
+    return(r)
+
+def formatar_nome(nome):
+    excecoes = ["da", "do", "das", "dos", "de", "e"]
+    nome = nome.lower()
+    palavras = nome.split()
+    r = ""
+
+    for palavra in palavras: 
+        if palavra != "": 
+            if palavra in excecoes:
+                r += palavra + " "
+            else: 
+                r += palavra.capitalize() + ""
+    return(r)
+
+
+nome = input()
+print(iniciais(nome))
+print(formatar(nome))
+
+    
+    
