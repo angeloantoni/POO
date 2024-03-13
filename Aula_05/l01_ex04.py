@@ -1,28 +1,36 @@
 import math
-class Entrada_cinema:
+class Ingresso:
     def __init__(self): 
-        self.dia = ""
-        self.horario = 0
+        self.__dia = "dom"
+        self.__horario = 0
 
-    def entrada_inteira(self):
-        valor_base = 0 
-        if self.dia == "segunda" or self.dia == "terça" or self.dia == "quinta":
-            valor_base = 16.0
-            if self.horario >= 17 and self.horario <= 24:
-                valor_base = (valor_base*0.5) + valor_base
-        if self.dia == "quarta":
-            valor_base = 8.0
-        if self.dia == "sexta" or self.dia == "sábado" or self.dia == "domingo":
-            valor_base = 20.0
-            if self.horario >= 17 and self.horario <= 0:
-                valor_base = (valor_base*0.5) + valor_base
+    def set_dia(self, dia):
+        dias = ["dom", "seg", "ter", "qua", "qui", "sex", "sab"] 
+        if dia in dias: self.__dia = dia 
+        else: raise ValueError()
 
-        return valor_base 
+    def set_horario(self, horario):
+        if 0 <= horario <= 23: self.__horario = horario
+        else: raise ValueError()
+
+    def get_dia(self):
+        return self.__dia 
+    
+    def get_horario(self):
+        return self.__horario
+
+    def inteira(self):
+        if self.__horario <= 17: return 10
+        else: return 20
+    
+    def meia(self):
+        return self.inteira() / 2
 
 
-cinemark = Entrada_cinema()
-
-cinemark.dia = "quarta"
-cinemark.horario = 17
-print(Entrada_cinema.entrada_inteira(cinemark))
-
+x = Ingresso()
+x.set_dia("seg")
+x.set_horario(20)
+print(x.get_dia())
+print(x.get_horario())
+print(x.inteira())
+print(x.meia())
