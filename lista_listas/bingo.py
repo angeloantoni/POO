@@ -1,6 +1,7 @@
 
 from multiprocessing.sharedctypes import Value
 import random 
+from random import sample
 
 
 class Bingo:
@@ -23,12 +24,38 @@ class Bingo:
         return self._bolas 
     
     def Proximo(self):
-        sorteio_bola = 0 
-        if sorteio_bola <= self._numBolas: 
-            return random.randint(1, self._numBolas)
-        else: return -1 
-    
-    def Sorteados(self): 
+        sorteio_bola = random.randint(1, self._numBolas)
+        return sorteio_bola
+
+    def Sorteados(self):    
+        self._lista = []
+        for i in range(self._numBolas): 
+            bola = self.Proximo()
+            if bola not in self._lista:
+                self._lista.append(bola)
+        return self._lista
+
+    def Remove(self):
+        while len(self._lista) < self._numBolas: 
+            bola = self.Proximo()
+            if bola not in self._lista:
+                self._lista.append(bola)
+        return self._lista
+
+class Play:
+    @staticmethod
+    def main():        
+      play = Bingo()
+      play.set_numBolas(10)
+
+      print(play.Sorteados())
+
+Play.main()
+
+
+
+        
+        
         
 
         
