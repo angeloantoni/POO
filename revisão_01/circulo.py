@@ -2,16 +2,25 @@ import math
 
 class Circulo:
     def __init__(self):
-        self.raio = 0
-    def calc_area(self):
-        return math.pi * (self.raio ** 2)
-    def calc_circu(self): 
-        return 2 * math.pi * self.raio
-    
+        self.__raio = 0
+    def set_raio(self, raio):
+        self.__raio = raio 
+        if raio < 0: raise ValueError()
+    def get_raio(self):
+        return self.__raio 
+    def area(self):
+         return math.pi * (self.__raio ** 2)
+    def circun(self): 
+        return 2 * math.pi * self.__raio 
 
-x = Circulo()
-x.raio = 2
-
-print(f"{x.calc_area():2f}")
-print(f"{x.calc_circu():2f}")
     
+class UI:
+    @staticmethod
+    def main(): 
+        x = Circulo() 
+        x.set_raio(float(input("Digite o valor do raio: ")))
+        print(f"Área: {x.area():2.2f}")
+        print(f"Circunferência: {x.circun():2.2f}")
+
+UI.main()
+  
