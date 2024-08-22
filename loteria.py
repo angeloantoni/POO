@@ -15,9 +15,10 @@ class SorteioLoteria:
         for i in range(self.__quantidade_numeros):
             if i not in numeros_sorteados:
                 numeros_sorteados.append(randrange(0, 60))
-            
 
-        return numeros_sorteados
+           
+
+        return '|'.join(map(str, numeros_sorteados))
     
 class UI:
     @staticmethod
