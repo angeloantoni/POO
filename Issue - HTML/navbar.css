@@ -1,0 +1,181 @@
+/* [Font] Fira Sans (400-500-700) */
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:wght@400;500;700&display=swap');
+
+:root {
+    font-size: 62.5%; /* 1rem = 10px */
+    
+    /* Main */
+    --Citrino: #C5FD01;
+    --Coral: #FD2600;
+        /* Variants */
+        --citrino-dark: #7DA000;
+        --citrino-medium: #A1CF00;
+    /* Background */
+    --bg-citrino: #F5FDD7;
+    /* Monocromatics */
+    --white: #FFFFFF;
+    --Paper: #EDEDEF;
+    --Office: #413D49;
+        /* Opacity */
+        --citrino-25: #F0FEBF;
+        --office-70: #7A7780;
+        --office-30: #C6C5C8;
+        --office-15: #E3E2E4;
+
+    /* Utils */
+    --height-navbar: 7.2rem;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100vh;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+    font-family: "Fira Sans", sans-serif;
+    font-size: 1.6rem;
+    background-color: var(--bg-citrino);
+}
+
+/* Common */
+.nav-bar,
+.nav-bar nav,
+.nav-links,
+.nav-links li,
+.nav-links a {
+    display: flex;
+    align-items: center;
+}
+
+.nav-bar nav {
+    width: 100%;
+}
+
+.nav-bar nav,
+.nav-links, 
+.nav-links li,
+.nav-links li a {
+    height: 100%;
+}
+
+/* ===== NAVBAR =============== */
+.nav-bar {
+    position: fixed;
+    left: 0; top: 0;
+    width: 100vw;
+    height: var(--height-navbar);
+    padding-inline: 10.4rem;
+    background-color: var(--citrino-dark);
+}
+
+.nav-bar nav {
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.nav-bar .user-notifications {
+    display: flex;
+    align-items: center;
+}
+
+.nav-bar .user {
+    min-width: 19.2rem;
+    display: flex;
+    align-items: center;
+    gap: .8rem;
+}
+
+.nav-bar .user-img {
+    display: flex;
+    width: 4.8rem;
+    aspect-ratio: 1;
+}
+
+.nav-bar .user-img img {
+    border: .2rem solid var(--Citrino);
+    border-radius: 999px;
+}
+
+.nav-bar .info {
+    display: flex;
+    flex-direction: column;
+    gap: 2;
+}
+
+.nav-bar .nome {
+    color: var(--white);
+    font-size: 1.4rem;
+    font-weight: 700;
+}
+
+.nav-bar .tipo {
+    color: var(--Citrino);
+    font-size: 1.4rem;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+
+.nav-bar .notification {
+    display: flex;
+}
+
+.nav-links {
+    gap: 3.2rem;
+}
+
+.nav-links li {
+    color: var(--Paper);
+    font-weight: 500;
+    text-transform: uppercase;
+}
+
+.nav-links a {
+    gap: .4rem;
+}
+
+/* States */
+.nav-links li.active {
+    font-weight: 700;
+    color: var(--white);
+    border-bottom: .4rem solid var(--Citrino);
+}
+
+.nav-links li.active svg path {
+    fill: var(--Citrino);
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    align-items: center;
+    flex-grow: 1;
+    height: calc(100% - 60px);
+    text-align: center;
+}
+
+.container img {
+    max-width: 100%;
+    height: auto; 
+}
+
+.titulo{
+    margin: 1rem;
+    text-align: center;
+    font-size: 36px;
+    font-family: "Fira Sans", sans-serif;
+    font-weight: bold;
+    color: #413D49;
+}
+.subtitulo{
+    margin-bottom: 1.5rem;
+    text-align: center;
+    font-size: 20px;
+    font-family: "Fira Sans", sans-serif;
+    color: #413D49;
+}
